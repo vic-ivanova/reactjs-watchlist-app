@@ -1,3 +1,5 @@
+![Watchlist App Preview](https://user-images.githubusercontent.com/46385323/92763509-4bc6f800-f39c-11ea-9631-f56f9c9914d3.JPG)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
