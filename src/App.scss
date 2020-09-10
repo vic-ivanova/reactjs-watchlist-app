@@ -1,0 +1,163 @@
+// App Colors
+$colorWhite: #ffffff;
+
+// Input Colors
+$firstInputColorOne: #506755;
+$firstInputColorTwo: #3a494f;
+
+$secondInputColorOne: #828c95;
+$secondInputColorTwo: #28343b;
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&display=swap");
+$movieAppFont: "Roboto Slab", serif;
+
+// Background
+$bgColor: #adadad;
+$linearGradient: linear-gradient(
+  to bottom,
+  rgba(255, 255, 255, 1) 0%,
+  rgba(255, 255, 255, 0.47) 65%,
+  rgba(255, 255, 255, 0) 100%
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $movieAppFont;
+}
+
+body {
+  text-align: center;
+  background-image: $linearGradient,
+    url("https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.watchlist-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 500px;
+  background: $bgColor;
+  border: 5px solid $firstInputColorTwo;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+  -webkit-box-shadow: 0px 0px 20px 0px $firstInputColorTwo;
+  -moz-box-shadow: 0px 0px 20px 0px $firstInputColorTwo;
+  box-shadow: 0px 0px 20px 0px $firstInputColorTwo;
+
+  .movie-app-title {
+    margin: 32px 0;
+    color: $colorWhite;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.watchlist-form {
+  margin-bottom: 32px;
+
+  .movie-input {
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid $firstInputColorTwo;
+    outline: none;
+    width: 320px;
+    background: transparent;
+    color: $colorWhite;
+
+    &::placeholder {
+      color: $colorWhite;
+    }
+
+    &.edit {
+      border: 2px solid $firstInputColorOne;
+    }
+  }
+
+  // Add/Update movie button
+  .movie-btn {
+    padding: 16px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+    background: linear-gradient(90deg, $firstInputColorTwo 0%, $firstInputColorOne 100%);
+    color: $colorWhite;
+    text-transform: uppercase;
+
+    &.edit {
+      background: linear-gradient(90deg, $firstInputColorOne 0%, $firstInputColorOne 100%);
+      padding: 16px 22px;
+    }
+  }
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+  max-height: 350px;
+
+  // Scrollbar
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $secondInputColorTwo 0%, $secondInputColorOne 100%);
+  }
+}
+
+.movie-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: $colorWhite;
+  background: linear-gradient(90deg, $secondInputColorOne 0%, $secondInputColorTwo 100%);
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+
+  &:nth-child(even) {
+    background: linear-gradient(90deg, $firstInputColorOne 0%, $firstInputColorTwo 100%);
+  }
+}
+
+// Icons
+.icons-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+
+  .delete-icon {
+    margin-right: 5px;
+    color: $colorWhite;
+  }
+
+  .edit-icon {
+    color: $colorWhite;
+  }
+}
